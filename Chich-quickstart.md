@@ -96,4 +96,4 @@ It updates by itself a minute or two after you add or change a recipe.
 
 If a change you made isn't showing up on the website after a few minutes, or Obsidian
 shows a "conflict" message, don't worry and don't try to fix it — just let me know and
-I'll sort it out. Your recipe text is always safe. Also I love you <3.
+I'll sort it out. Your recipe text is always safe. Also I love you, comrade.
