@@ -1,0 +1,57 @@
+# Builds your .cook files into a static website with CookCLI and deploys it to
+# GitHub Pages. Runs automatically on every push to main — including pushes that
+# come from Obsidian's auto-sync — so the public site always reflects the latest
+# recipes without anyone running a build locally.
+
+name: Build and deploy recipe site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:        # also lets you trigger a rebuild manually from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install CookCLI
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/cooklang/CookCLI/main/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          # If this step ever fails, swap it for a direct binary download from
+          # https://github.com/cooklang/cookcli/releases (the install script
+          # picks the right binary for the runner automatically).
+
+      - name: Build the static site
+        # Source defaults to the repo root (CookCLI walks subfolders for .cook files).
+        # --base-url sets the subpath so CSS/links resolve correctly on a project Pages
+        # site served from https://<user>.github.io/<repo>/ . The expression below fills
+        # in your repo name automatically.
+        run: cook build web _site --base-url "/${GITHUB_REPOSITORY#*/}/"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
