@@ -1,4 +1,4 @@
-# Our Recipes — Your Quick Start
+# Our Recipes, Comrade — Your Quick Start
 
 This is everything you need. You only ever do one thing: **edit recipes in Obsidian.**
 Everything else (saving to GitHub, updating our website) happens automatically in the

@@ -11,10 +11,14 @@
             "id": "003f8a26cc9abd7f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Chich-quickstart.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Chich-quickstart"
             }
           }
         ]
@@ -177,7 +181,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c4ff0dd0dfcd051a",
+  "active": "003f8a26cc9abd7f",
   "lastOpenFiles": [
     "Chich-quickstart.md",
     "partner-quickstart.md",
