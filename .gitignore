@@ -1,0 +1,8 @@
+# --- Obsidian device-specific state (prevents sync conflicts) ---
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+# --- Build + export artifacts (don't commit these) ---
+_site/
+*.melarecipes
