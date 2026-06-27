@@ -177,8 +177,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "003f8a26cc9abd7f",
+  "active": "c4ff0dd0dfcd051a",
   "lastOpenFiles": [
+    "Chich-quickstart.md",
+    "partner-quickstart.md",
     "gitignore-snippet.txt"
   ]
 }
