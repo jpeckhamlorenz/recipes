@@ -13,13 +13,13 @@
             "state": {
               "type": "cook",
               "state": {
-                "file": "Chinese Dumpling Soup.cook",
+                "file": "Potato Rösti with Smoked Salmon.cook",
                 "mode": "preview",
-                "scale": 1,
+                "scale": 0.5,
                 "currentStep": -1
               },
               "icon": "document-cook",
-              "title": "Chinese Dumpling Soup"
+              "title": "Potato Rösti with Smoked Salmon"
             }
           }
         ]
@@ -187,18 +187,18 @@
   },
   "active": "003f8a26cc9abd7f",
   "lastOpenFiles": [
-    "Braised Chinese Cabbage in Broth.cook",
-    "Chich-quickstart.md",
-    "Wine Mushroom Garlic Chicken.cook",
-    "Whole Chimken and Pan Sauce.cook",
-    "Weeknight Salmon Dinner.cook",
-    "Tofu Skin Pork Rolls.cook",
-    "Tofu Puff & Glass Noodle Soup.cook",
-    "These Mashed Potatoes Are So Perfect Wur Stoopid.cook",
-    "Taiwanese Cabbage Stir Fry.cook",
-    "Taiwanese Braised Pork Belly.cook",
     "Taiwanese A-Choy.cook",
+    "Cheesy Kale and Mushroom Strata.cook",
+    "Buttercream Frosting.cook",
+    "Carbonara.cook",
+    "Chich-quickstart.md",
+    "Chicken Stock.cook",
+    "Red Lentil Soup.cook",
+    "Fancy-Ass.cook",
+    "Roast Dinner.cook",
     "Steamed Asparagus.cook",
+    "NY-style Pizza Sauce (cooked).cook",
+    "Japanese Curry Roux.cook",
     "partner-quickstart.md"
   ]
 }
