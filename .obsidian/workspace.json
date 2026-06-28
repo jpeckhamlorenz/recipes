@@ -13,13 +13,13 @@
             "state": {
               "type": "cook",
               "state": {
-                "file": "Potato Rösti with Smoked Salmon.cook",
+                "file": "Beef Chili.cook",
                 "mode": "preview",
-                "scale": 0.5,
+                "scale": 1,
                 "currentStep": -1
               },
               "icon": "document-cook",
-              "title": "Potato Rösti with Smoked Salmon"
+              "title": "Beef Chili"
             }
           }
         ]
@@ -187,18 +187,18 @@
   },
   "active": "003f8a26cc9abd7f",
   "lastOpenFiles": [
-    "Taiwanese A-Choy.cook",
-    "Cheesy Kale and Mushroom Strata.cook",
+    "Bacon, Mushroom, Spinach Pierogies.cook",
     "Buttercream Frosting.cook",
+    "Cantonese Poached Chicken (Sous Vide).cook",
+    "Red Lentil Soup.cook",
+    "Taiwanese A-Choy.cook",
+    "Taiwanese Cabbage Stir Fry.cook",
+    "Potato Rösti with Smoked Salmon.cook",
+    "Cheesy Kale and Mushroom Strata.cook",
     "Carbonara.cook",
     "Chich-quickstart.md",
     "Chicken Stock.cook",
-    "Red Lentil Soup.cook",
     "Fancy-Ass.cook",
-    "Roast Dinner.cook",
-    "Steamed Asparagus.cook",
-    "NY-style Pizza Sauce (cooked).cook",
-    "Japanese Curry Roux.cook",
     "partner-quickstart.md"
   ]
 }

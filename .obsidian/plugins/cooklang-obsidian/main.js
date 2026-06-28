@@ -24813,7 +24813,7 @@ class CookView extends obsidian.TextFileView {
         this.rawRecipe = rawRecipe;
         const baseServings = parseServingsValue(rawRecipe.servings);
         const displayServings = baseServings != null
-            ? clampServings(baseServings * this.scale)
+            ? clampServings(baseServings)
             : null;
         this.previewRenderer.updateSettings(this.settings);
         this.previewRenderer.render(this.previewEl, this.file, {
