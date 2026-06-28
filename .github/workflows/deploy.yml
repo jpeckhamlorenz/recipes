@@ -23,22 +23,43 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out the repository
+        uses: actions/checkout@v5
 
       - name: Install CookCLI
+        # Discovers the Linux x86_64 asset from the latest CookCLI release
+        # dynamically, so this keeps working even if Cooklang renames release
+        # assets in the future.  Fails loudly with diagnostics if no match.
         run: |
-          curl -fsSL https://raw.githubusercontent.com/cooklang/CookCLI/main/install.sh | sh
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-          # If this step ever fails, swap it for a direct binary download from
-          # https://github.com/cooklang/cookcli/releases (the install script
-          # picks the right binary for the runner automatically).
+          set -euo pipefail
+          API="https://api.github.com/repos/cooklang/cookcli/releases/latest"
+
+          ASSET_URL=$(curl -fsSL "$API" \
+            | grep -oE '"browser_download_url":\s*"[^"]+linux[^"]+\.tar\.gz"' \
+            | grep -iE 'x86_64|amd64' \
+            | head -1 \
+            | sed -E 's/.*"(https[^"]+)".*/\1/')
+
+          if [ -z "${ASSET_URL:-}" ]; then
+            echo "ERROR: Could not find a Linux x86_64 CookCLI release asset."
+            echo "Available assets in the latest release:"
+            curl -fsSL "$API" | grep browser_download_url || true
+            exit 1
+          fi
+
+          echo "Downloading CookCLI from: $ASSET_URL"
+          curl -fL "$ASSET_URL" -o cook.tar.gz
+          tar -xzf cook.tar.gz
+          sudo install -m 0755 cook /usr/local/bin/cook
+          cook --version
 
       - name: Build the static site
-        # Source defaults to the repo root (CookCLI walks subfolders for .cook files).
-        # --base-url sets the subpath so CSS/links resolve correctly on a project Pages
-        # site served from https://<user>.github.io/<repo>/ . The expression below fills
-        # in your repo name automatically.
-        run: cook build web _site --base-url "/${GITHUB_REPOSITORY#*/}/"
+        # --base-url sets the subpath so CSS/links resolve correctly on a project
+        # Pages site served from https://<user>.github.io/<repo>/ .  The variable
+        # below fills in your repo name automatically (e.g. "recipes").
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          cook build web _site --base-url "/${REPO_NAME}/"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
