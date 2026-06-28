@@ -11,14 +11,15 @@
             "id": "003f8a26cc9abd7f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "cook",
               "state": {
-                "file": "Chich-quickstart.md",
-                "mode": "source",
-                "source": false
+                "file": "Chinese Dumpling Soup.cook",
+                "mode": "preview",
+                "scale": 1,
+                "currentStep": -1
               },
-              "icon": "lucide-file",
-              "title": "Chich-quickstart"
+              "icon": "document-cook",
+              "title": "Chinese Dumpling Soup"
             }
           }
         ]
@@ -186,8 +187,18 @@
   },
   "active": "003f8a26cc9abd7f",
   "lastOpenFiles": [
+    "Braised Chinese Cabbage in Broth.cook",
     "Chich-quickstart.md",
-    "partner-quickstart.md",
-    "gitignore-snippet.txt"
+    "Wine Mushroom Garlic Chicken.cook",
+    "Whole Chimken and Pan Sauce.cook",
+    "Weeknight Salmon Dinner.cook",
+    "Tofu Skin Pork Rolls.cook",
+    "Tofu Puff & Glass Noodle Soup.cook",
+    "These Mashed Potatoes Are So Perfect Wur Stoopid.cook",
+    "Taiwanese Cabbage Stir Fry.cook",
+    "Taiwanese Braised Pork Belly.cook",
+    "Taiwanese A-Choy.cook",
+    "Steamed Asparagus.cook",
+    "partner-quickstart.md"
   ]
 }
